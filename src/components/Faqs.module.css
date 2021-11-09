@@ -1,0 +1,9 @@
+.faq {
+  height: 5rem;
+  width: 40%;
+  border: 1px solid rgb(238, 232, 232);
+  margin: 2rem;
+  border-radius: 15px;
+  padding: 1rem;
+  color: rgb(116, 115, 115);
+}

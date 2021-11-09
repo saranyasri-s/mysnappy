@@ -1,0 +1,45 @@
+.availableOn {
+  background-color: #5353f1;
+  height: 8rem;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.availableOn p,
+.availableOn div {
+  margin: 0;
+  padding: 1rem;
+}
+.FooterAbove {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.FooterAbove p {
+  margin: 0.3rem;
+  color: rgb(61, 60, 60);
+}
+.footerImage {
+  background-image: url(./images/mysnappyimage.png);
+  height: 8rem;
+  width: 8rem;
+  margin: 2rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.Footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.Footer div a {
+  text-decoration: none;
+  color: rgb(61, 60, 60);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
