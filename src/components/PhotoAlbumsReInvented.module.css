@@ -1,0 +1,44 @@
+.PhotoAlbumsReInvented {
+  background-image: url(./images/imagephonegallery.jpg);
+  height: 35rem;
+  margin: 1rem 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+.PhotoAlbumsReInvented p {
+  margin: 2rem;
+  font-size: 1rem;
+}
+.PhotoAlbumsReInvented h4 {
+  color: rgb(225, 231, 251);
+  font-size: 2rem;
+}
+.buttons {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin: 0.1rem 1rem;
+}
+.buttons div a.Qr {
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  background-color: transparent;
+  border: 1px solid blue;
+  padding: 1rem;
+  margin: 0 0.5rem;
+}
+.buttons div a.SignIn {
+  color: blue;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid blue;
+  font-weight: bolder;
+  padding: 1rem 4rem;
+  margin: 0 0.5rem;
+}

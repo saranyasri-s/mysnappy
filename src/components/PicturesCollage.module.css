@@ -1,0 +1,57 @@
+.picsCollage {
+  display: flex;
+  height: auto;
+  flex-flow: row;
+  width: 80%;
+  flex-wrap: wrap;
+  padding: 2rem;
+  margin: auto;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.bird1 {
+  background-image: url(./images/bird1.jpg);
+  height: 10rem;
+  width: 15rem;
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  margin: 0.5rem;
+}
+
+.bird3 {
+  background-image: url(./images/bird3.jpg);
+  height: 15rem;
+  width: 15rem;
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  margin: 0.5rem;
+}
+.bird4 {
+  background-image: url(./images/bird4.jpg);
+  height: 15rem;
+  width: 15rem;
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  margin: 0.5rem;
+}
+.bird5 {
+  background-image: url(./images/bird5.jpg);
+  height: 25rem;
+  width: 15rem;
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  margin: 0.5rem;
+}
+.bird6 {
+  background-image: url(./images/bird6.jpg);
+  height: 15rem;
+  width: 15rem;
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  margin: 0.5rem;
+}

@@ -1,0 +1,31 @@
+.ExperiencingMemories {
+  background-color: #5353f1;
+  height: 23rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-flow: row;
+  color: white;
+  justify-content: center;
+}
+.ExperiencingMemories div {
+  margin: 0.2rem 0.5rem;
+}
+.left h4 {
+  font-size: 1.5rem;
+  color: white;
+}
+.viewPrices {
+  padding: 1rem;
+  width: 30%;
+  border: 1px solid white;
+}
+.image {
+  background-image: url(./images/collage.jpg);
+  height: 19rem;
+  width: 25rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
