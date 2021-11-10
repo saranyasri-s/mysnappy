@@ -7,29 +7,37 @@ function SignUp() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
+  const [emailTouched, setEmailTouched] = useState(false);
 
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState(false);
+  const [passwordTouched, setPasswordTouched] = useState(false);
 
   const [confirmPassword, setConfirmPassword] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState(false);
+  const [confirmPwdTouched, setzconfirmPwdTouched] = useState(false);
 
   const [firstName, setFirstNamne] = useState("");
   const [firstNameError, setFirstNameError] = useState(false);
-
+  const [firstNameTouched, setFirstNameTouched] = useState(false);
   const [lastName, setLastName] = useState("");
 
   const [address, setAddress] = useState("");
-
   const [addressError, setAddressError] = useState(false);
+  const [addressTouched, setAddressTouched] = useState(false);
+
   const [checkBox, setCheckBox] = useState(false);
   const allfieldsOk =
     !emailError &&
+    emailTouched &&
     !passwordError &&
+    passwordTouched &&
     !firstNameError &&
+    firstNameTouched &&
     !confirmPasswordError &&
+    confirmPwdTouched &&
     !addressError &&
-    email.trim().length &&
+    addressTouched &&
     checkBox;
   if (allfieldsOk) {
     console.log("true");
@@ -39,6 +47,7 @@ function SignUp() {
   const emailInputHandler = (e) => {
     setEmail(e.target.value);
     validateEmail(e.target.value);
+    setEmailTouched(true);
   };
   const validateEmail = (val) => {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(val)) {
@@ -52,6 +61,7 @@ function SignUp() {
   const passwordChangeHandler = (e) => {
     setPassword(e.target.value);
     validatepassword(e.target.value);
+    setPasswordTouched(true);
   };
   const validatepassword = (val) => {
     const a =
@@ -67,6 +77,7 @@ function SignUp() {
   };
   const confirmPasswordChangeHandler = (e) => {
     setConfirmPassword(e.target.value);
+    setzconfirmPwdTouched(true);
     validateConfirmPassword(e.target.value);
   };
   const validateConfirmPassword = (val) => {
@@ -80,6 +91,7 @@ function SignUp() {
   };
   const firstnameChangeHandler = (e) => {
     setFirstNamne(e.target.value);
+    setFirstNameTouched(true);
     validateFirstname(e.target.value);
   };
   const validateFirstname = (val) => {
@@ -96,6 +108,7 @@ function SignUp() {
   };
   const addressChangeHandler = (e) => {
     setAddress(e.target.value);
+    setAddressTouched(true);
     addressValidate(e.target.value);
   };
   const addressValidate = (val) => {
@@ -113,13 +126,7 @@ function SignUp() {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    if (
-      !emailError &&
-      !passwordError &&
-      !confirmPasswordError &&
-      !firstNameError &&
-      !addressError
-    ) {
+    if (allfieldsOk) {
       const response = await fetch(
         "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCmrKm9DzSb4KKXMS1xYqNktzIudRi8g6c",
         {
@@ -253,7 +260,9 @@ function SignUp() {
         </div>
         <div className={classes.button}>
           <div>
-            <button type="submit">Sign Up</button>
+            <button disabled={allfieldsOk} type="submit">
+              Sign Up
+            </button>
           </div>
           <div>
             Already have an account? <Link to="/auth/Login">Log in</Link>
