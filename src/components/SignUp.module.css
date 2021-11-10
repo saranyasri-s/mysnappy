@@ -1,0 +1,58 @@
+.background {
+  background-image: url(./images/signUpimage.jpg);
+  position: fixed;
+  z-index: -3;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: grey;
+}
+.SignUp {
+  width: 40%;
+  margin: 2rem auto;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-flow: column;
+  font-size: 0.9rem;
+}
+.SignUp h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+.SignUp input,
+.SignUp textarea {
+  padding: 0.5rem;
+  border: 1px solid #80808042;
+  border-radius: 5px;
+}
+.tandc {
+  margin: 0.3rem 0;
+}
+.button {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+.button button {
+  padding: 0.5rem 2rem;
+  background-color: #1e4dd1;
+  color: white;
+  border: 2px solid #1e4dd1;
+  border-radius: 5px;
+}
+a {
+  text-decoration: none;
+  color: #0fa8e7;
+ 
+}
+@media(max-width:500px){
+    .SignUp {
+        width: 70%;}
+}

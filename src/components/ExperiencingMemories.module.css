@@ -1,5 +1,5 @@
 .ExperiencingMemories {
-  background-color: #5353f1;
+  background-color: #3f70f9;
   height: 23rem;
   width: 100%;
   box-sizing: border-box;
@@ -21,6 +21,7 @@
   padding: 1rem;
   width: 30%;
   border: 1px solid white;
+  cursor: pointer;
 }
 .image {
   background-image: url(./images/collage.jpg);
@@ -28,4 +29,18 @@
   width: 25rem;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+}
+@media (max-width: 500px) {
+  .viewPrices {
+    padding: 0.2rem 1rem;
+  }
+  .ExperiencingMemories {
+    display: flex;
+    flex-flow: column;
+    height: auto;
+  }
+  .image {
+    width: auto;
+  }
 }

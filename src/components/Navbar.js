@@ -20,7 +20,7 @@ function Navbar() {
           <NavLink
             className={classes.registerButton}
             activeClassName={classes.active}
-            to="/signUp"
+            to="/auth/SignUp"
           >
             REGISTER
           </NavLink>

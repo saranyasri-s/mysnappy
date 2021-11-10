@@ -22,8 +22,27 @@
   color: rgba(0, 0, 0, 0.726);
   font-weight: bold;
 }
+.NavItems div a:hover {
+  color: grey;
+}
 .NavItems div a.registerButton {
-  color: blue;
+  color: #1350f6;
   padding: 0.5rem 1rem;
-  border: 1px solid blue;
+  border: 1px solid #1350f6;
+}
+@media (max-width: 500px) {
+  .Navbar {
+    padding: 0.7rem;
+    font-size: 0.6rem;
+  }
+  .NavItems div a {
+    padding: 0.4rem;
+  }
+  .BrandName {
+    background-image: url(./images/mysnappyimage.png);
+    background-repeat: no-repeat;
+    height: 2rem;
+    width: 3rem;
+    background-size: cover;
+  }
 }

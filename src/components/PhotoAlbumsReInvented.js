@@ -11,12 +11,13 @@ function PhotoAlbumsReInvented() {
         <p>Share online or order as photobook</p>
       </div>
       <div className={classes.buttons}>
-        <div>
-          <Link className={classes.Qr} to="/">Log In by QR code</Link>
-        </div>
-        <div>
-          <Link className={classes.SignIn} to="/SignIn">Log In</Link>
-        </div>
+        <Link className={classes.Qr} to="/">
+          Log In by QR code
+        </Link>
+
+        <Link className={classes.SignIn} to="/SignIn">
+          Log In
+        </Link>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ function Footer() {
       <div className={classes.availableOn}>
         <p> Available on</p>
         <div>Apple</div>
+
         <div>Android</div>
         <div>Windows</div>
       </div>

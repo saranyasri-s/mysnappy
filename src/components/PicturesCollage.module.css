@@ -3,7 +3,7 @@
   height: auto;
   flex-flow: row;
   width: 80%;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding: 2rem;
   margin: auto;
   box-sizing: border-box;

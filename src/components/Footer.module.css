@@ -36,10 +36,26 @@
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+  flex-flow: row;
 }
 .Footer div a {
   text-decoration: none;
   color: rgb(61, 60, 60);
   padding: 0.5rem 1rem;
   cursor: pointer;
+}
+.Footer div a:hover {
+  color: grey;
+}
+@media (max-width: 500px) {
+  .Footer {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .availableOn {
+    display: flex;
+    flex-flow: column;
+    height: auto;
+  }
 }
