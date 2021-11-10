@@ -1,0 +1,57 @@
+.PictureAndText {
+  display: flex;
+  flex-flow: row;
+  height: 30rem;
+  padding: 2rem;
+}
+.PictureAndText div {
+  margin: 1rem;
+}
+.image1 {
+  background-image: url("./images/sampleInage1.jpg");
+  height: 60%;
+  width: 100%;
+  background-size: cover;
+}
+.image2 {
+  background-image: url("./images/sampleImage2.jpg");
+  height: 60%;
+  width: 100%;
+  background-size: cover;
+}
+.image3 {
+  background-image: url("./images/sampleImage3.jpg");
+  height: 60%;
+  width: 100%;
+  background-size: cover;
+}
+.image4 {
+  background-image: url("./images/sampleImage4.jpg");
+  height: 60%;
+  width: 100%;
+  background-size: cover;
+}
+@media (max-width: 500px) {
+  .PictureAndText {
+    display: flex;
+    flex-flow: column;
+    height: auto;
+    padding: 2rem;
+  }
+  .image1 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .image2 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .image3 {
+    height: 10rem;
+    width: 10rem;
+  }
+  .image4 {
+    height: 10rem;
+    width: 10rem;
+  }
+}

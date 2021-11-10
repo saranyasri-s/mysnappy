@@ -8,6 +8,7 @@ import PicturesCollage from "./components/PicturesCollage";
 import ExperiencingMemories from "./components/ExperiencingMemories";
 import Pricing from "./components/Pricing";
 import Feedback from "./components/Feedback";
+import PictureAndText from "./components/PictureAndText";
 function Layout() {
   return (
     <div>
@@ -17,6 +18,7 @@ function Layout() {
       <ExperiencingMemories></ExperiencingMemories>
       <Pricing></Pricing>
       <Feedback></Feedback>
+      <PictureAndText></PictureAndText>
       <Footer></Footer>
     </div>
   );

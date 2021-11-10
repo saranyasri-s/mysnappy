@@ -92,7 +92,10 @@ function SignIn() {
             </p>
           </div>
           <div>
-            <label htmlFor="#pwd">Password</label>
+            <label htmlFor="#pwd">
+              {" "}
+              <span style={{ color: "red" }}>*</span>Password
+            </label>
             <input
               id="#pwd"
               type="password"

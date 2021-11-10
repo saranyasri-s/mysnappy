@@ -4,7 +4,9 @@ import { Link, NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <header className={classes.Navbar}>
-      <div className={classes.BrandName}></div>
+      <Link to="/">
+        <div className={classes.BrandName}></div>
+      </Link>
       <div className={classes.NavItems}>
         <div>
           <NavLink activeClassName={classes.active} to="/howitworks">
