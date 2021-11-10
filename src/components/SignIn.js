@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import classes from "./SignIn.module.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "./store/AuthContext";
 
 function SignIn() {
+  const authCtx = useContext(AuthContext);
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [pwdError, setPwdError] = useState("");
@@ -15,8 +19,6 @@ function SignIn() {
   };
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(pwd);
-    console.log(email);
 
     if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
       setEmailError("* Enter valid email");
@@ -56,9 +58,10 @@ function SignIn() {
       } else {
         const data = await response.json();
         console.log(data);
-        const IdToken = data.idToken;
-        console.log(IdToken);
+
+        authCtx.logIn(data.idToken);
         alert("authentication successfull");
+        navigate("/");
       }
       setPwd("");
       setEmail("");
@@ -93,7 +96,6 @@ function SignIn() {
           </div>
           <div>
             <label htmlFor="#pwd">
-              {" "}
               <span style={{ color: "red" }}>*</span>Password
             </label>
             <input

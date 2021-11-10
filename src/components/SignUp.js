@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import classes from "./SignUp.module.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
 
@@ -18,8 +20,22 @@ function SignUp() {
   const [lastName, setLastName] = useState("");
 
   const [address, setAddress] = useState("");
-  const [addressError, setAddressError] = useState(false);
 
+  const [addressError, setAddressError] = useState(false);
+  const [checkBox, setCheckBox] = useState(false);
+  const allfieldsOk =
+    !emailError &&
+    !passwordError &&
+    !firstNameError &&
+    !confirmPasswordError &&
+    !addressError &&
+    email.trim().length &&
+    checkBox;
+  if (allfieldsOk) {
+    console.log("true");
+  } else {
+    console.log("false");
+  }
   const emailInputHandler = (e) => {
     setEmail(e.target.value);
     validateEmail(e.target.value);
@@ -38,7 +54,10 @@ function SignUp() {
     validatepassword(e.target.value);
   };
   const validatepassword = (val) => {
-    if (val.trim().length <= 6) {
+    const a =
+      /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8,})$/;
+    let b = a.test(val);
+    if (!b) {
       setPasswordError(true);
       return true;
     } else {
@@ -88,6 +107,9 @@ function SignUp() {
       return false;
     }
   };
+  const checkBoxHandler = () => {
+    setCheckBox(!checkBox);
+  };
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -98,12 +120,6 @@ function SignUp() {
       !firstNameError &&
       !addressError
     ) {
-      console.log(email);
-      console.log(password);
-      console.log(confirmPassword);
-      console.log(firstName);
-      console.log(lastName);
-      console.log(address);
       const response = await fetch(
         "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCmrKm9DzSb4KKXMS1xYqNktzIudRi8g6c",
         {
@@ -123,6 +139,7 @@ function SignUp() {
       } else {
         const data = await response.json();
         alert("Sign up successful ,Log in using your credentials");
+        navigate("/auth/Login");
       }
       setPassword("");
       setEmail("");
@@ -130,6 +147,7 @@ function SignUp() {
       setFirstNamne("");
       setLastName("");
       setAddress("");
+      setCheckBox(false);
     } else {
       alert("Enter required information");
     }
@@ -149,6 +167,7 @@ function SignUp() {
           onChange={emailInputHandler}
           value={email}
           placeholder="Email"
+          autoComplete="off"
         ></input>
         {emailError && (
           <p style={{ color: "red", margin: "0" }}>Enter valid email address</p>
@@ -165,7 +184,8 @@ function SignUp() {
         ></input>
         {passwordError && (
           <p style={{ color: "red", margin: "0" }}>
-            Enter password of more than 6 characters
+            Password must include one char, small alphabet, big alphabet and
+            number
           </p>
         )}
         <p>
@@ -179,7 +199,9 @@ function SignUp() {
           placeholder="Reenter password"
         ></input>
         {confirmPasswordError && (
-          <p style={{ color: "red", margin: "0" }}>Enter the same password</p>
+          <p style={{ color: "red", margin: "0" }}>
+            Two passwords that you enter is inconsistent!
+          </p>
         )}
         <p>
           <span style={{ color: "red" }}>*</span>First name
@@ -187,6 +209,7 @@ function SignUp() {
         <input
           required
           type="text"
+          autoComplete="off"
           onChange={firstnameChangeHandler}
           value={firstName}
         ></input>
@@ -200,11 +223,13 @@ function SignUp() {
           type="text"
           onChange={lastNameChangeHandler}
           value={lastName}
+          autoComplete="off"
         ></input>
         <p>
           <span style={{ color: "red" }}>*</span>Address
         </p>
         <textarea
+          autoComplete="off"
           required
           onChange={addressChangeHandler}
           value={address}
@@ -216,14 +241,21 @@ function SignUp() {
           </p>
         )}
         <div style={{ margin: "0.8rem 0rem" }} className={classes.tandc}>
-          <input required type="checkbox"></input>
+          <input
+            value={checkBox}
+            onClick={checkBoxHandler}
+            required
+            type="checkbox"
+          ></input>
           <span style={{ margin: "0 0 0 0.2rem" }}>
             I agree to <Link to="/TandC">Terms and conditions</Link>
           </span>
         </div>
         <div className={classes.button}>
           <div>
-            <button type="submit">Sign Up</button>
+            <button disabled={!allfieldsOk} type="submit">
+              Sign Up
+            </button>
           </div>
           <div>
             Already have an account? <Link to="/auth/Login">Log in</Link>

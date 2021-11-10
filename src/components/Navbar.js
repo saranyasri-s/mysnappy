@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./Navbar.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import AuthContext from "./store/AuthContext";
 function Navbar() {
+  const navigate = useNavigate();
+  const authCtx = useContext(AuthContext);
+  const LogoutHandler = () => {
+    authCtx.logOut();
+    navigate("/auth/Login");
+  };
   return (
     <header className={classes.Navbar}>
       <Link to="/">
@@ -18,6 +25,7 @@ function Navbar() {
             FAQ
           </NavLink>
         </div>
+
         <div>
           <NavLink
             className={classes.registerButton}

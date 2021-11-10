@@ -50,9 +50,13 @@
 a {
   text-decoration: none;
   color: #0fa8e7;
- 
 }
-@media(max-width:500px){
-    .SignUp {
-        width: 70%;}
+.button button:disabled {
+  background-color: grey;
+  border: 2px solid grey;
+}
+@media (max-width: 500px) {
+  .SignUp {
+    width: 70%;
+  }
 }
