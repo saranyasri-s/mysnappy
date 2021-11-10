@@ -253,9 +253,7 @@ function SignUp() {
         </div>
         <div className={classes.button}>
           <div>
-            <button disabled={!allfieldsOk} type="submit">
-              Sign Up
-            </button>
+            <button type="submit">Sign Up</button>
           </div>
           <div>
             Already have an account? <Link to="/auth/Login">Log in</Link>
