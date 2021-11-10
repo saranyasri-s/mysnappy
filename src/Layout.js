@@ -7,6 +7,7 @@ import PhotoAlbumsReInvented from "./components/PhotoAlbumsReInvented";
 import PicturesCollage from "./components/PicturesCollage";
 import ExperiencingMemories from "./components/ExperiencingMemories";
 import Pricing from "./components/Pricing";
+import Feedback from "./components/Feedback";
 function Layout() {
   return (
     <div>
@@ -15,6 +16,7 @@ function Layout() {
       <PicturesCollage></PicturesCollage>
       <ExperiencingMemories></ExperiencingMemories>
       <Pricing></Pricing>
+      <Feedback></Feedback>
       <Footer></Footer>
     </div>
   );
