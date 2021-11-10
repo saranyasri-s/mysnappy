@@ -15,7 +15,7 @@ function PhotoAlbumsReInvented() {
           Log In by QR code
         </Link>
 
-        <Link className={classes.SignIn} to="/SignIn">
+        <Link className={classes.SignIn} to="/auth/Login">
           Log In
         </Link>
       </div>
