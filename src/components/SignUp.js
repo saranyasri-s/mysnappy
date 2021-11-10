@@ -148,9 +148,16 @@ function SignUp() {
         alert("Sign up successful ,Log in using your credentials");
         navigate("/auth/Login");
       }
+      setPasswordTouched(false);
+      setPasswordError(false);
       setPassword("");
+      setEmailError(false);
+      setEmailTouched(false);
       setEmail("");
+
       setConfirmPassword("");
+      setConfirmPasswordError(false);
+      setzconfirmPwdTouched(false);
       setFirstNamne("");
       setLastName("");
       setAddress("");
@@ -191,8 +198,8 @@ function SignUp() {
         ></input>
         {passwordError && (
           <p style={{ color: "red", margin: "0" }}>
-            Password must include one char, small alphabet, big alphabet and
-            number
+            Password must include min 8 char, one symbol, small alphabet, big
+            alphabet, and number
           </p>
         )}
         <p>
@@ -260,7 +267,7 @@ function SignUp() {
         </div>
         <div className={classes.button}>
           <div>
-            <button disabled={allfieldsOk} type="submit">
+            <button disabled={!allfieldsOk} type="submit">
               Sign Up
             </button>
           </div>

@@ -8,34 +8,49 @@ function SignIn() {
   const authCtx = useContext(AuthContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [pwdError, setPwdError] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [emailTouched, setEmailTouched] = useState(false);
+
+  const [passwordError, setPasswordError] = useState(false);
   const [pwd, setPwd] = useState("");
+  const [passwordTouched, setPasswordTouched] = useState(false);
+
   const emailInputHandler = (e) => {
     setEmail(e.target.value);
+    validateEmail(e.target.value);
+    setEmailTouched(true);
   };
+  const validateEmail = (val) => {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(val)) {
+      setEmailError(false);
+      return false;
+    } else {
+      setEmailError(true);
+      return true;
+    }
+  };
+
   const pwdInputHandler = (e) => {
     setPwd(e.target.value);
+    validatepassword(e.target.value);
+    setPasswordTouched(true);
+  };
+  const validatepassword = (val) => {
+    const a =
+      /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8,})$/;
+    let b = a.test(val);
+    if (!b) {
+      setPasswordError(true);
+      return true;
+    } else {
+      setPasswordError(false);
+      return false;
+    }
   };
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-      setEmailError("* Enter valid email");
-    }
-    if (email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-      setEmailError("");
-    }
-
-    if (pwd.trim().length < 7) {
-      setPwdError("* Enter password of more than 7 characters");
-    }
-    if (pwd.trim().length >= 7) {
-      setPwdError("");
-    }
-    let isInputValid =
-      email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) &&
-      pwd.trim().length >= 7;
+    const isInputValid = true;
     if (isInputValid) {
       const response = await fetch(
         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCmrKm9DzSb4KKXMS1xYqNktzIudRi8g6c",
@@ -65,9 +80,14 @@ function SignIn() {
       }
       setPwd("");
       setEmail("");
+      setPasswordError(false);
+      setPasswordTouched(false);
+      setEmailTouched(false);
+      setEmailError(false);
     }
   };
-
+  const allfieldsOk =
+    !emailError && emailTouched && !passwordError && passwordTouched;
   return (
     <div className={classes.SignIn}>
       <div className={classes.background}></div>
@@ -84,15 +104,12 @@ function SignIn() {
               onChange={emailInputHandler}
               autocomplete="off"
             ></input>
-            <p
-              style={{
-                color: "red",
-                margin: "0.1rem 0 1rem 0",
-                textAlign: "left",
-              }}
-            >
-              {emailError}
-            </p>
+
+            {emailError && (
+              <p style={{ color: "red", margin: "0" }}>
+                Enter valid email address
+              </p>
+            )}
           </div>
           <div>
             <label htmlFor="#pwd">
@@ -104,18 +121,19 @@ function SignIn() {
               value={pwd}
               onChange={pwdInputHandler}
             ></input>
-            <p
-              style={{
-                color: "red",
-                margin: "0.1rem 0 1rem 0",
-                textAlign: "left",
-              }}
-            >
-              {pwdError}
-            </p>
+            {passwordError && (
+              <p style={{ color: "red", margin: "0" }}>
+                Password must include min 8 char, one symbol, small alphabet,
+                big alphabet, and number
+              </p>
+            )}
           </div>
 
-          <button type="submit" className={classes.button}>
+          <button
+            disabled={!allfieldsOk}
+            type="submit"
+            className={classes.button}
+          >
             LOG IN
           </button>
 

@@ -62,6 +62,9 @@
 .switching a:hover {
   color: rgb(4, 52, 71);
 }
+.button:disabled {
+  background-color: grey;
+}
 @media (max-width: 500px) {
   .LogIn {
     width: 80%;
