@@ -62,3 +62,8 @@
 .switching a:hover {
   color: rgb(4, 52, 71);
 }
+@media (max-width: 500px) {
+  .LogIn {
+    width: 80%;
+  }
+}

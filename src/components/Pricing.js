@@ -15,7 +15,7 @@ function Pricing() {
           <p>Backup and download</p>
           <p>original photos</p>
           <p>Full HD photos and videos</p>
-          <Link to="/signUp" className={classes.button}>
+          <Link to="/auth/SignUp" className={classes.button}>
             REGISTER NOW
           </Link>
         </div>
@@ -28,7 +28,7 @@ function Pricing() {
           <p>Backup and download</p>
           <p>original photos</p>
           <p>Full HD photos and videos</p>
-          <Link to="/signUp" className={classes.button}>
+          <Link to="/auth/SignUp" className={classes.button}>
             REGISTER NOW
           </Link>
         </div>
@@ -41,7 +41,7 @@ function Pricing() {
           <p>Backup and download</p>
           <p>original photos</p>
           <p>Full HD photos and videos</p>
-          <Link to="/signUp" className={classes.button}>
+          <Link to="/auth/SignUp" className={classes.button}>
             REGISTER NOW
           </Link>
         </div>
@@ -54,7 +54,7 @@ function Pricing() {
           <p>Backup and download</p>
           <p>original photos</p>
           <p>Full HD photos and videos</p>
-          <Link to="/signUp" className={classes.button}>
+          <Link to="/auth/SignUp" className={classes.button}>
             REGISTER NOW
           </Link>
         </div>
@@ -67,7 +67,7 @@ function Pricing() {
           <p>Backup and download</p>
           <p>original photos</p>
           <p>Full HD photos and videos</p>
-          <Link to="/signUp" className={classes.button}>
+          <Link to="/auth/SignUp" className={classes.button}>
             REGISTER NOW
           </Link>
         </div>

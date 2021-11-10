@@ -1,6 +1,6 @@
 .Navbar {
   display: flex;
-
+  font-size: 1rem;
   justify-content: space-between;
   padding: 1rem 5rem;
 }
@@ -33,7 +33,7 @@
 @media (max-width: 500px) {
   .Navbar {
     padding: 0.7rem;
-    font-size: 0.6rem;
+    font-size: 0.9rem;
   }
   .NavItems div a {
     padding: 0.4rem;

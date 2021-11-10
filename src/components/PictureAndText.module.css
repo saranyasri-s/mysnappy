@@ -1,7 +1,8 @@
 .PictureAndText {
   display: flex;
   flex-flow: row;
-  height: 30rem;
+  height: auto;
+  min-height: 40rem;
   padding: 2rem;
 }
 .PictureAndText div {
@@ -9,25 +10,25 @@
 }
 .image1 {
   background-image: url("./images/sampleInage1.jpg");
-  height: 60%;
+  height: 50%;
   width: 100%;
   background-size: cover;
 }
 .image2 {
   background-image: url("./images/sampleImage2.jpg");
-  height: 60%;
+  height: 50%;
   width: 100%;
   background-size: cover;
 }
 .image3 {
   background-image: url("./images/sampleImage3.jpg");
-  height: 60%;
+  height: 50%;
   width: 100%;
   background-size: cover;
 }
 .image4 {
   background-image: url("./images/sampleImage4.jpg");
-  height: 60%;
+  height: 50%;
   width: 100%;
   background-size: cover;
 }

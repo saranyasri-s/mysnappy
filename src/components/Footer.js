@@ -1,15 +1,25 @@
 import React from "react";
 import classes from "./Footer.module.css";
 import { Link } from "react-router-dom";
+import { DiAndroid } from "react-icons/di";
+import { DiApple } from "react-icons/di";
+import { DiWindows } from "react-icons/di";
 function Footer() {
   return (
     <>
       <div className={classes.availableOn}>
         <p> Available on</p>
-        <div>Apple</div>
+        <div>
+          <DiApple />
+        </div>
 
-        <div>Android</div>
-        <div>Windows</div>
+        <div>
+          <DiAndroid />
+        </div>
+
+        <div>
+          <DiWindows />
+        </div>
       </div>
       <div className={classes.FooterAbove}>
         <div className={classes.footerImage}></div>
